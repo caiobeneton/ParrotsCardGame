@@ -39,11 +39,26 @@ ul {
     border: 1px solid #99CEA8;
     border-radius: 5px;
     margin: 17px 17px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    cursor: pointer;
 }
 .carta img {
     width: 100px;
     height: 100px;
+}
+.carta-frente, .carta-costas {
+    transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    backface-visibility: hidden;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+.carta-costas {
+    transform: rotateY(180deg);
+}
+.carta.virada .carta-frente {
+    transform: rotateY(180deg);
+}
+.carta.virada .carta-costas {
+    transform: rotateY(0deg)
 }
