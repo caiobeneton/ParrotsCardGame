@@ -6,5 +6,5 @@ while (qtdeCartas < 4 || qtdeCartas > 14 || qtdeCartas % 2 !== 0) {
 const ul = document.querySelector('ul');
 
 for (let i = 0; i < qtdeCartas; i++) {
-    ul.innerHTML += `<li><div class="carta"><img src="ParrotsAssets/front.png" alt=""></div></li>`
+    ul.innerHTML += `<li><div class="carta"><img src="assets/front.png" alt=""></div></li>`
 }
