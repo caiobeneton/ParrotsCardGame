@@ -62,3 +62,11 @@ ul {
 .carta.virada .carta-costas {
     transform: rotateY(0deg)
 }
+@media (max-width: 414px) {
+    .titulo h1 {
+        font-size: 36px;
+    }
+    ul {
+        flex-direction: column;
+    }
+}

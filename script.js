@@ -41,31 +41,31 @@ function viraCarta(item) {
     console.log(falaimg)
 
     if (cartasViradas <= 2) {
-        item.classList.add('virada')
+        item.classList.add('virada');
     }
     if (cartasViradas === 2) {
         jogadas++
-        confereCartas()
+        confereCartas();
     }
 }
 function desviraCarta() {
-    const desvirar = document.querySelectorAll('.virada:not(.igual)')
-    desvirar[0].classList.remove('virada')
-    desvirar[1].classList.remove('virada')
-    cartasViradas = 0
+    const desvirar = document.querySelectorAll('.virada:not(.igual)');
+    desvirar[0].classList.remove('virada');
+    desvirar[1].classList.remove('virada');
+    cartasViradas = 0;
 }
 function confereCartas() {
-    const cartasCheck = document.querySelectorAll('.virada:not(.igual)')
-    const img1 = cartasCheck[0].querySelector('.carta :nth-child(2)').getAttribute('src')
-    const img2 = cartasCheck[1].querySelector('.carta :nth-child(2)').getAttribute('src')
+    const cartasCheck = document.querySelectorAll('.virada:not(.igual)');
+    const img1 = cartasCheck[0].querySelector('.carta :nth-child(2)').getAttribute('src');
+    const img2 = cartasCheck[1].querySelector('.carta :nth-child(2)').getAttribute('src');
 
     if (img1 === img2){
-        cartasCheck[0].classList.add('igual')
-        cartasCheck[1].classList.add('igual')
-        cartasViradas = 0
+        cartasCheck[0].classList.add('igual');
+        cartasCheck[1].classList.add('igual');
+        cartasViradas = 0;
     }
     else {
-        setTimeout(desviraCarta, 1000)
+        setTimeout(desviraCarta, 1000);
     }
     
 }
