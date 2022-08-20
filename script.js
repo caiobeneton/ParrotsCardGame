@@ -34,7 +34,7 @@ for (let i = 0; i < qtdeCartas; i++) {
         </li>`
 }
 function viraCarta(item) {
-    cartasViradas++ // NÃO TA SUBTRAINDO POR ISSO CARTAS NÃO VIRAM DE VOLTA, PRECISA ATUALIZAR
+    cartasViradas++
     
     const fala = item.querySelector('.carta :nth-child(2)')
     const falaimg = fala.getAttribute('src')
@@ -42,15 +42,19 @@ function viraCarta(item) {
 
     if (cartasViradas <= 2) {
         item.classList.add('virada')
-        setTimeout(desviraCarta, 5000, item)
     }
     if (cartasViradas === 2) {
         jogadas++
         confereCartas()
+        setTimeout(desviraCarta, 1000, item)
     }
 }
-function desviraCarta(item) {
-    item.classList.remove('virada')
+function desviraCarta() {
+    const desvirar = document.querySelectorAll('.virada')
+    console.log(desvirar)
+    desvirar[0].classList.remove('virada')
+    desvirar[1].classList.remove('virada')
+    cartasViradas = 0
 }
 function confereCartas() {
     const cartasCheck = document.querySelectorAll('.virada:not(.igual)')
