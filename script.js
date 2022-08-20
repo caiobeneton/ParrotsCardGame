@@ -36,10 +36,6 @@ for (let i = 0; i < qtdeCartas; i++) {
 }
 function viraCarta(item) {
     cartasViradas++
-    
-    const fala = item.querySelector('.carta :nth-child(2)')
-    const falaimg = fala.getAttribute('src')
-    console.log(falaimg)
 
     if (cartasViradas <= 2) {
         item.classList.add('virada');
