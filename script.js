@@ -1,5 +1,6 @@
 let cartasViradas = 0;
 let jogadas = 0;
+let pares = 0;
 
 let qtdeCartas = 0;
 while (qtdeCartas < 4 || qtdeCartas > 14 || qtdeCartas % 2 !== 0) {
@@ -63,9 +64,16 @@ function confereCartas() {
         cartasCheck[0].classList.add('igual');
         cartasCheck[1].classList.add('igual');
         cartasViradas = 0;
+        encerraJogo()
     }
     else {
         setTimeout(desviraCarta, 1000);
     }
     
+}
+function encerraJogo(){
+    pares++
+    if (pares === qtdeCartas/2) {
+        alert(`Você ganhou em ${jogadas} jogadas!`)
+    }
 }
